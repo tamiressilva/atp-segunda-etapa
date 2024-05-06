@@ -4,7 +4,7 @@ const Modal = (props) => {
         <div >
             <div className="message">
                 <div className="message-header" >
-                    <h2>Menssagem do Sistema:</h2>
+                    <h2>Mensagem do Sistema:</h2>
                     <button onClick={props.onClose} className="clear">X</button>
                 </div>
                 {props.menssagem}
