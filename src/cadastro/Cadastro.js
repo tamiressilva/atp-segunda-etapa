@@ -13,7 +13,7 @@ class Cadastro extends Component {
             dtnascimento:"",
             sobrenome: "",
             rendered: false,
-            mensagem: "",
+            menssagem: "",
         }
         this.gravar = this.gravar.bind(this);
     }
@@ -22,13 +22,13 @@ class Cadastro extends Component {
         if (this.state.email === "" || this.state.senha.length === 0
         || this.state.nome === "" || this.state.sobrenome === "" || this.state.dtnascimento === "") {
             let state = this.state;
-            state.mensagem = "Preencha todos os campos!";
+            state.menssagem = "Preencha todos os campos!";
             this.setState(state)
             return true;
         }
         if (this.state.senha.length < 6){
             let state = this.state;
-            state.mensagem = "Senha deve conter 6 caracteres!";
+            state.menssagem = "Senha deve conter 6 caracteres!";
             this.setState(state)
             return true;
         }
@@ -50,13 +50,13 @@ class Cadastro extends Component {
                     dtnascimento: this.state.dtnascimento
                 });
             let state = this.state;
-            state.mensagem = "Usuário cadastrado com sucesso!";
+            state.menssagem = "Usuário cadastrado com sucesso!";
             this.setState(state);
             this.formulario(true);
             window.location.href = "/";
         } catch (error) {
             let state = this.state;
-            state.mensagem = error.message;
+            state.menssagem = error.message;
             this.setState(state);
             this.formulario(true);
         }
@@ -108,7 +108,7 @@ class Cadastro extends Component {
                             </div>
                        </div>
                        {this.state.rendered &&
-                           <Modal mensagem={this.state.mensagem} onClose={() => this.setState({ rendered: false })}></Modal>
+                           <Modal menssagem={this.state.menssagem} onClose={() => this.setState({ rendered: false })}></Modal>
                        }
                    </div>
                </div>
